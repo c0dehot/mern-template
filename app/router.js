@@ -7,7 +7,7 @@ function router( app ){
         // const list = await orm.getList( due )
         const list = [ "big", "puffy", "tall", req.params.stuff ]
 
-        res.send( list )
+        res.send( { status: true, list } )
     })
 
     app.post('/api/endpoint', async function(req, res) {

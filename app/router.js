@@ -1,11 +1,11 @@
-// const orm = require('./orm');
+const orm = require('./orm');
 
 function router( app ){
     app.get('/api/endpoint/:stuff?', async function(req, res) {
         // const due = req.params.due ? { due: req.params.due } : ''
         console.log( `[GET] getting list, params`, req.params )
         // const list = await orm.getList( due )
-        const list = [ "big", "puffy", "tall" ]
+        const list = [ "big", "puffy", "tall", req.params.stuff ]
 
         res.send( list )
     })
